@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../resources/lib/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body onload="showCnumber();return false">
+<div class="container">
+    <div class="form-inline my-3 ml-3">
+        <h3 class="text-muted">分组信息</h3>
+        <select class=" form-control ml-sm-3 col-md-3"  id="showStuCnum" onchange="showStuInfo(this.value)">
+            <option>-请选择班级-</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <table class="table table-hover border border-muted">
+            <thead>
+            <tr><th>#</th><th>学号</th><th>姓名</th><th>组号</th><th>操作</th></tr>
+            </thead>
+            <tbody id="showStuByClassId">
+
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+    <div class="modal fade" id="myModalchangeG">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <div class="header clearfix">
+                        <h3 class="text-muted">修改组号</h3>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">学生学号</span>
+                            </div>
+                            <input type="text" class="form-control" id="StuD_num2" name="snum2" readonly="readonly">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">将该生移动至组</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="组号" id="G_num2" name="gnum2"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary "style="float: right" onclick="changeStuGroup()">提交</button>
+                    </form>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                </div>
+
+            </div>
+        </div>
+</div>
+
+</body>
+<script src="../../resources/lib/bootstrap/js/bootstrap.min.js"></script>
+<!--<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>-->
+<script src="../../resources/lib/jquery/jquery-3.3.1.min.js"></script>
+<script src="/resources/js/stuInfo.js"></script>
+</html>

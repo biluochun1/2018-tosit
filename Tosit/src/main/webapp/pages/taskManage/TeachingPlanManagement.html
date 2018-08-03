@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+
+<body onload="loadPlan(); return false;">
+    <div class="container">
+        <div class="form-inline my-3 ml-3">
+            <h3 class="text-muted">教学计划</h3>
+            <button type="button" class="btn btn-primary ml-sm-3" data-toggle="modal" data-target="#myModal">+创建教学计划</button>
+        </div>
+
+        <div class="container" id="plans">
+
+        </div>
+
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- 模态框头部 -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">创建教学计划</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                        <form enctype="multipart/form-data" id="uploadForm">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">计划名称</span>
+                                </div>
+                                <input type="text" class="form-control" id="plan-name" name="snum" disabled="disabled">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">上传教学计划</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="planFile" id="uploadTeachPlan" multiple="multiple" accept=".pdf" onchange="inputPlanName(); return false;">
+                                    <label class="custom-file-label" for="uploadTeachPlan">选择文件</label>
+                                </div>
+                            </div>
+                            <button type="submit" id="create-plan" class="btn btn-primary float-right" onclick="createPlan(); return false;">提交</button>
+                        </form>
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../resources/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>-->
+    <script src="../../resources/lib/jquery/jquery-3.3.1.min.js"></script>
+
+    <!--<自己的js>-->
+    <script src="/resources/js/teachPlan.js"></script>
+</body>
+
+</html>
